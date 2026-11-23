@@ -19,10 +19,11 @@ docker compose up --build -d
 - 工时切段：`/m5_calculate`、`/api/m5_calculate`
 - 薪资对账：`/m6_reconcile`、`/api/m6_reconcile`
 - 周期归档：`/m7_archive`、`/api/m7_archive`
+- 次日接替：`/m8_handover`、`/api/m8_handover`
 
 ## 核心规则
 
-跨夜按班次归属日配对，休息区间先扣除，再按法定日期和工时阈值切分倍率。完整数值、边界和异常定义见 `docs/DATA-DICTIONARY.md`。
+跨夜按班次归属日配对，休息区间先扣除，再按法定日期和工时阈值切分倍率。完整数值、边界和异常定义见 `docs/DATA-DICTIONARY.md`。次日接替按实际下班加最低休息推导，逐项对应超时班次、休息截止、待接替岗位与确认人员，裁决规则见 `docs/HANDOVER.md`。
 
 ## 验证
 
